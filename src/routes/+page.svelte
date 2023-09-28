@@ -10,9 +10,9 @@ import IconArrowTopRightOnSquare from '$lib/icons/IconArrowTopRightOnSquare.svel
 <div class="space-y-10">
 	{#each projects as project (project.getId())}
 		<section class="space-y-1">
-			<div class="card rounded-md bg-white flex overflow-hidden items-center space-x-5">
+			<div class="card rounded-md bg-white flex overflow-hidden items-center space-x-5 pr-5">
 				<img class="w-32 border-r" src=/projects/{project.getImage()} alt="Thumbnail for {project.getTitle()}" />
-				<p class="text-3xl">{project.getTitle()}</p>
+				<p style="" class="smart-break text-2xl sm:text-3xl w-full overflow-ellipsis break-words">{project.getTitle()}</p>
 			</div>
 			<div class="card rounded-md bg-white p-10 space-y-2">
 				{#each project.getBody() as paragraph }
@@ -31,3 +31,17 @@ import IconArrowTopRightOnSquare from '$lib/icons/IconArrowTopRightOnSquare.svel
 		</section>
 	{/each}
 </div>
+
+<style>
+	/* Tailwind "break-word" can not break long words only long sentences */
+	.smart-break {
+		overflow-wrap: break-word;
+		word-wrap: break-word;
+		-ms-word-break: break-all;
+		word-break: break-word;
+		-ms-hyphens: auto;
+		-moz-hyphens: auto;
+		-webkit-hyphens: auto;
+		hyphens: auto;
+	}
+</style>
