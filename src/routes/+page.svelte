@@ -10,11 +10,11 @@ import IconArrowTopRightOnSquare from '$lib/icons/IconArrowTopRightOnSquare.svel
 <div class="space-y-10">
 	{#each projects as project (project.getId())}
 		<section class="space-y-1">
-			<div class="card rounded-md bg-white flex overflow-hidden items-center space-x-5 pr-5">
+			<div class="card bg-white flex overflow-hidden items-center space-x-5 pr-5">
 				<img class="w-32 border-r" src=/projects/{project.getImage()} alt="Thumbnail for {project.getTitle()}" />
 				<p style="" class="smart-break text-2xl sm:text-3xl w-full overflow-ellipsis break-words">{project.getTitle()}</p>
 			</div>
-			<div class="card rounded-md bg-white p-10 space-y-2">
+			<div class="card bg-white p-10 space-y-2">
 				{#each project.getBody() as paragraph }
 					<p>{paragraph}</p>
 				{/each}
