@@ -1,5 +1,6 @@
 <script lang="ts">
-	import LinkChip from '$lib/components/LinkChip.svelte';
+	import EmbeddedYoutube from '$lib/components/EmbeddedYoutube.svelte';
+import LinkChip from '$lib/components/LinkChip.svelte';
 import IconArrowTopRightOnSquare from '$lib/icons/IconArrowTopRightOnSquare.svelte';
 	import { Project } from '$lib/models/Project.js';
 
@@ -18,8 +19,13 @@ import IconArrowTopRightOnSquare from '$lib/icons/IconArrowTopRightOnSquare.svel
 				{#each project.getBody() as paragraph }
 					<p>{paragraph}</p>
 				{/each}
+
 				{#if project.getLink() }
-					<LinkChip href={project.getLink()} text={project.getLinkText()} />
+					{#if project.getLink().startsWith("https://www.youtube.com/embed")}
+						<EmbeddedYoutube src={project.getLink()} title={project.getLinkText()} />
+					{:else}
+						<LinkChip href={project.getLink()} text={project.getLinkText()} />
+					{/if}
 				{/if}
 				<h2 class="text-sm">Technologies</h2>
 				<div class="space-x-1">
