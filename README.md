@@ -1,5 +1,7 @@
 # svelte-portfolio
-Configurable portfolio built using SvelteKit and TypeScript
+Configurable portfolio built using SvelteKit and TypeScript.
+
+<img src="screenshot_01.png">
 
 ### Technologies
 - SvelteKit
@@ -8,7 +10,12 @@ Configurable portfolio built using SvelteKit and TypeScript
 - Skeleton UI
 - Tailwind CSS
 
+### Try it out 🚀
+I'm hosting it here on Vercel: [svelte-portfolio-frederik-norlyk.vercel.app](https://svelte-portfolio-frederik-norlyk.vercel.app/).
+
 ### Installation
+If you want to run it yourself, you must perform the following configurations.
+
 To link the application with your Vercel PostgreSQL database, run the following commands:
 [Read more](https://vercel.com/docs/cli)
 ```
