@@ -1,27 +1,32 @@
 <script lang="ts">
 	import EmbeddedYoutube from '$lib/components/EmbeddedYoutube.svelte';
-import LinkChip from '$lib/components/LinkChip.svelte';
-import IconArrowTopRightOnSquare from '$lib/icons/IconArrowTopRightOnSquare.svelte';
+	import LinkChip from '$lib/components/LinkChip.svelte';
 	import { Project } from '$lib/models/Project.js';
 
-	export let data
+	export let data;
 	const projects = data.projects.map((p) => Project.parse(p));
 </script>
 
 <div class="space-y-10">
 	{#each projects as project (project.getId())}
 		<section class="space-y-1">
-			<div class="card bg-white flex overflow-hidden items-center space-x-5 pr-5">
-				<img class="w-32 border-r" src=/projects/{project.getImage()} alt="Thumbnail for {project.getTitle()}" />
-				<p style="" class="smart-break text-2xl sm:text-3xl w-full overflow-ellipsis break-words">{project.getTitle()}</p>
+			<div class="card flex items-center space-x-5 overflow-hidden bg-white pr-5">
+				<img
+					class="w-32 border-r"
+					src="/projects/{project.getImage()}"
+					alt="Thumbnail for {project.getTitle()}"
+				/>
+				<p style="" class="smart-break w-full overflow-ellipsis break-words text-2xl sm:text-3xl">
+					{project.getTitle()}
+				</p>
 			</div>
-			<div class="card bg-white p-10 space-y-2">
-				{#each project.getBody() as paragraph }
+			<div class="card space-y-2 bg-white p-10">
+				{#each project.getBody() as paragraph}
 					<p>{paragraph}</p>
 				{/each}
 
-				{#if project.getLink() }
-					{#if project.getLink().startsWith("https://www.youtube.com/embed")}
+				{#if project.getLink()}
+					{#if project.getLink().startsWith('https://www.youtube.com/embed')}
 						<EmbeddedYoutube src={project.getLink()} title={project.getLinkText()} />
 					{:else}
 						<LinkChip href={project.getLink()} text={project.getLinkText()} />
@@ -30,7 +35,7 @@ import IconArrowTopRightOnSquare from '$lib/icons/IconArrowTopRightOnSquare.svel
 				<h2 class="text-sm">Technologies</h2>
 				<div class="space-x-1">
 					{#each project.getTechnologies() as technology (technology)}
-						<span class="badge variant-filled">{technology}</span>
+						<span class="variant-filled badge">{technology}</span>
 					{/each}
 				</div>
 			</div>
