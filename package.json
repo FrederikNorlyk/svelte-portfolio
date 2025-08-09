@@ -43,7 +43,7 @@
 	"dependencies": {
 		"@floating-ui/dom": "^1.5.3",
 		"@vercel/postgres": "^0.4.1",
-		"vercel": "^31.2.2"
+		"vercel": "^44.7.3"
 	},
 	"engines": {
 		"node": "22.x"
