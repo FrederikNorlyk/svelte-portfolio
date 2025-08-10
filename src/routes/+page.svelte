@@ -35,7 +35,7 @@
 				<h2 class="text-sm">Technologies</h2>
 				<div class="space-x-1">
 					{#each project.getTechnologies() as technology (technology)}
-						<span class="variant-filled badge">{technology}</span>
+						<span class="preset-filled badge">{technology}</span>
 					{/each}
 				</div>
 			</div>

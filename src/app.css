@@ -1,3 +1,6 @@
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton/optional/presets';
+@import '@skeletonlabs/skeleton/themes/rocket';
 html,
 body {
 	@apply h-full;

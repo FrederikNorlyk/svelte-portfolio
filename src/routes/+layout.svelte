@@ -2,12 +2,10 @@
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
 	import '@skeletonlabs/skeleton/styles/skeleton.css';
 	import '../app.css';
-	import { AppShell, AppBar, LightSwitch, type PopupSettings, popup } from '@skeletonlabs/skeleton';
+	import { AppBar, type PopupSettings } from '@skeletonlabs/skeleton-svelte';
 	import { PUBLIC_USERNAME } from '$env/static/public';
 	import IconBarsThree from '$lib/icons/IconBarsThree.svelte';
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
-	import { storePopup } from '@skeletonlabs/skeleton';
-
 	storePopup.set({ computePosition, autoUpdate, offset, shift, flip, arrow });
 
 	const userMenuPopup: PopupSettings = {
@@ -31,10 +29,18 @@
 			<svelte:fragment slot="trail">
 				<LightSwitch />
 
-				<a class="variant-ghost-surface btn btn-sm hidden sm:block" href="/" rel="noreferrer">
+				<a
+					class="preset-tonal-surface border-surface-500 btn btn-sm hidden border sm:block"
+					href="/"
+					rel="noreferrer"
+				>
 					Portfolio
 				</a>
-				<a class="variant-ghost-surface btn btn-sm hidden sm:block" href="/about" rel="noreferrer">
+				<a
+					class="preset-tonal-surface border-surface-500 btn btn-sm hidden border sm:block"
+					href="/about"
+					rel="noreferrer"
+				>
 					Om mig
 				</a>
 
@@ -44,8 +50,16 @@
 
 				<div data-popup="userMenuPopup">
 					<div class="borderborder-gray-400 card mt-3 mr-3 w-40 space-y-2 p-4 shadow-xl">
-						<a class="variant-ghost btn w-full sm:hidden" href="/" rel="noreferrer">Portfolio</a>
-						<a class="variant-ghost btn w-full sm:hidden" href="/about" rel="noreferrer">Om mig</a>
+						<a
+							class="preset-tonal border-surface-500 btn w-full border sm:hidden"
+							href="/"
+							rel="noreferrer">Portfolio</a
+						>
+						<a
+							class="preset-tonal border-surface-500 btn w-full border sm:hidden"
+							href="/about"
+							rel="noreferrer">Om mig</a
+						>
 					</div>
 				</div>
 			</svelte:fragment>

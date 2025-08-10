@@ -5,7 +5,7 @@
 	export let text: string;
 </script>
 
-<a class="variant-soft chip hover:variant-filled" {href} target="_blank">
+<a class="preset-tonal chip hover:preset-filled" {href} target="_blank">
 	<span><IconArrowTopRightOnSquare cssClass="h-3" /></span>
 	<span>{text}</span>
 </a>
