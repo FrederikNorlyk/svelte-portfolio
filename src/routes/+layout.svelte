@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '@skeletonlabs/skeleton/themes/theme-skeleton.css';
 	import '@skeletonlabs/skeleton/styles/skeleton.css';
-	import '../app.postcss';
+	import '../app.css';
 	import { AppShell, AppBar, LightSwitch, type PopupSettings, popup } from '@skeletonlabs/skeleton';
 	import { PUBLIC_USERNAME } from '$env/static/public';
 	import IconBarsThree from '$lib/icons/IconBarsThree.svelte';
@@ -24,7 +24,7 @@
 			padding="p-3 pl-5 pr-5 sm:pl-16 sm:pr-16 md:pl-40 md:pr-40 2xl:pl-64 2xl:pr-64"
 		>
 			<svelte:fragment slot="lead">
-				<a href="/" class="select-none text-3xl">
+				<a href="/" class="text-3xl select-none">
 					{PUBLIC_USERNAME}
 				</a>
 			</svelte:fragment>
@@ -43,7 +43,7 @@
 				</button>
 
 				<div data-popup="userMenuPopup">
-					<div class="borderborder-gray-400 card mr-3 mt-3 w-40 space-y-2 p-4 shadow-xl">
+					<div class="borderborder-gray-400 card mt-3 mr-3 w-40 space-y-2 p-4 shadow-xl">
 						<a class="variant-ghost btn w-full sm:hidden" href="/" rel="noreferrer">Portfolio</a>
 						<a class="variant-ghost btn w-full sm:hidden" href="/about" rel="noreferrer">Om mig</a>
 					</div>
@@ -52,7 +52,7 @@
 		</AppBar>
 	</svelte:fragment>
 
-	<div class="m-5 pb-96 sm:ml-16 sm:mr-16 sm:mt-10 md:ml-40 md:mr-40 2xl:ml-64 2xl:mr-64">
+	<div class="m-5 pb-96 sm:mt-10 sm:mr-16 sm:ml-16 md:mr-40 md:ml-40 2xl:mr-64 2xl:ml-64">
 		<slot />
 	</div>
 </AppShell>

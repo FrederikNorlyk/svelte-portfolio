@@ -16,7 +16,7 @@
 					src="/projects/{project.getImage()}"
 					alt="Thumbnail for {project.getTitle()}"
 				/>
-				<p style="" class="smart-break w-full overflow-ellipsis break-words text-2xl sm:text-3xl">
+				<p style="" class="smart-break w-full text-2xl break-words overflow-ellipsis sm:text-3xl">
 					{project.getTitle()}
 				</p>
 			</div>

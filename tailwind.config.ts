@@ -1,4 +1,3 @@
-import { skeleton } from '@skeletonlabs/tw-plugin';
 import { join } from 'path';
 import type { Config } from 'tailwindcss';
 
@@ -11,16 +10,5 @@ export default {
 	theme: {
 		extend: {}
 	},
-	plugins: [
-		skeleton({
-			themes: {
-				preset: [
-					{
-						name: 'rocket',
-						enhancements: true
-					}
-				]
-			}
-		})
-	]
+	plugins: []
 } satisfies Config;
